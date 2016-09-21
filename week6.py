@@ -71,9 +71,10 @@ def exercise9(f):
 
 def unfold(p, h, t, x):
     if p(x):
-        return []
+        a = []
     else:
-        return [h(x)] + unfold(p, h, t, (t(x)))
+        a = [h(x)] + unfold(p, h, t, (t(x)))
+    return a
 
 
 def exercise11(l, n):
@@ -89,6 +90,4 @@ def idd(ob):
 
 def exercise13(f, x):
     return unfold(lambda x: f(x) > 100, idd, f, x)
-
-
 
